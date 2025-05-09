@@ -139,8 +139,6 @@
   filter: blur(750px);
 }
 
-
-
 /* Feedback section styles */
 .feedback-marquee {
   height: 100%;
@@ -196,6 +194,48 @@
   backface-visibility: hidden; /* Prevent flickering */
 }
 
-.green-gradient{
-  background-image: radial-gradient( circle 1588px at -27.3% 144%,  rgba(255,22,22,1) 0%, rgba(0,0,0,1) 43.4%, rgba(0,0,0,1) 65.8%, rgba(255,22,22,1) 100.2% );
+.green-gradient {
+  background-image: radial-gradient(
+    circle 1588px at -27.3% 144%,
+    rgba(255, 22, 22, 1) 0%,
+    rgba(0, 0, 0, 1) 43.4%,
+    rgba(0, 0, 0, 1) 65.8%,
+    rgba(255, 22, 22, 1) 100.2%
+  );
+}
+
+.typing {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid; /* Blinking cursor effect */
+  animation: 
+    typing 3.5s steps(22, end) infinite, /* Typing animation loops indefinitely */
+    blink 0.75s step-end infinite; /* Blinking cursor */
+}
+
+/* Typing animation */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 100%; /* Type out fully */
+  }
+  60% {
+    width: 100%; /* Pause briefly at full width */
+  }
+  100% {
+    width: 0; /* Reset to start for loop */
+  }
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #5ce1e6; /* Match text-gradient's dominant color */
+  }
 }
